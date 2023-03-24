@@ -8,4 +8,5 @@ if dotenv_path.exists():
     load_dotenv(dotenv_path)
 
 TOKEN = os.environ.get('TOKEN')
-PREFIX = os.environ.get('PREFIX')
+
+PREFIX = ","

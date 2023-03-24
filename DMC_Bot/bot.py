@@ -1,4 +1,3 @@
-import discord
 from discord.ext import commands
 
 from cfg import TOKEN, PREFIX
