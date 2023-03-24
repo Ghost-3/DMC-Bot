@@ -59,7 +59,6 @@ class Commands(commands.Cog):
     async def mc_avatar(self, ctx: ApplicationContext, nickname: str):
         embed = Embed(color=0x11FF11, title=nickname)
         embed.set_image(url=self.cravatar.helm_avatar(nickname))
-        print(self.cravatar.helm_avatar(nickname))
         await ctx.respond(embed=embed)
 
     @discord.slash_command(name="mc-head", description="Отправляет объёмную картинку головы")
