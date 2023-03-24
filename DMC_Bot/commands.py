@@ -8,7 +8,7 @@ from DMC_Bot.utils.cravatar import Cravatar
 from DMC_Bot.utils.server_status import ServerStatus
 from DMC_Bot.utils.ban_list import BanList
 
-from DMC_Bot.UI.test_modal import MyModal, MyView
+from DMC_Bot.UI.test_modal import RequestModal, RequestView
 
 
 class Commands(commands.Cog):
@@ -94,7 +94,7 @@ class Commands(commands.Cog):
     @discord.slash_command(name="test-modal", description="modal")
     async def test_modal(self, ctx: ApplicationContext, button: bool = False):
         if button:
-            await ctx.respond(view=MyView(ctx))
+            await ctx.respond(view=RequestView())
         else:
-            await ctx.send_modal(MyModal())
+            await ctx.send_modal(RequestModal())
 
