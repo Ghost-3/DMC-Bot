@@ -36,6 +36,6 @@ class RequestView(View):
     def __init__(self, *items: Item):
         super().__init__(*items)
 
-    @discord.ui.button(label="Отправить заявку")
+    @discord.ui.button(label="Отправить заявку", style=discord.ButtonStyle.blurple)
     async def button_callback(self, button: Button, interaction: Interaction):
         await interaction.response.send_modal(RequestModal(title="Заявка"))

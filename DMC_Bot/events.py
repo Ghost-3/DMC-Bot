@@ -2,7 +2,7 @@ from discord.ext import commands
 from discord import Activity, ActivityType
 from asyncio import sleep
 
-from DMC_Bot.utils.server_status import ServerStatus
+from utils.server_status import ServerStatus
 
 
 class Events(commands.Cog):

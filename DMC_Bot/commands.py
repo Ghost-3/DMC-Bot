@@ -4,11 +4,11 @@ import discord
 from discord import Embed, ApplicationContext
 from discord.ext import commands
 
-from DMC_Bot.utils.cravatar import Cravatar
-from DMC_Bot.utils.server_status import ServerStatus
-from DMC_Bot.utils.ban_list import BanList
+from utils.cravatar import Cravatar
+from utils.server_status import ServerStatus
+from utils.ban_list import BanList
 
-from DMC_Bot.UI.request_modal import RequestModal, RequestView
+from UI.request_modal import RequestModal, RequestView
 
 
 class Commands(commands.Cog):
@@ -32,7 +32,9 @@ class Commands(commands.Cog):
                         "`/random` - Случайное число от a до b\n"
                         "`/mc-avatar` - Плоская голова игрока\n"
                         "`/mc-head` - Голова игрока\n"
-                        "`/server-status` - Статус сервера")
+                        "`/server-status` - Статус сервера\n"
+                        "`/ban-list` - Список забаненых игроков (WIP)\n"
+                        "`/send-request` - Отправить заявку на проходку")
         await ctx.respond(embed=help_embed)
 
     @discord.slash_command(name="info", description="Отправляет информацию о сервере")
@@ -80,7 +82,7 @@ class Commands(commands.Cog):
         embed.set_image(url=ServerStatus.favicon_url)
         await ctx.respond(embed=embed)
 
-    @discord.slash_command(name="ban-list", description="Отправляет список забаненных пользователей")
+    @discord.slash_command(name="ban-list", description="Отправляет список забаненых пользователей")
     async def ban_list(self, ctx: ApplicationContext, page: int):
         data = self.ban_list.get_page(page)
         ban_list = "\n".join(" | ".join(
