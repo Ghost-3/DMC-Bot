@@ -1,0 +1,12 @@
+{
+  "commands": {},
+  "events": {},
+  "request": {
+    "modal": {
+      "ephemeral_msg_text": "Заявка успешно отправлена",
+      "request_channel_id": 784984599435804672,
+      "up_emoji": "<:up_:1088899600997417071>",
+      "down_emoji": "<:down:1088899619632730184>"
+    }
+  }
+}

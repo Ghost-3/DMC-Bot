@@ -4,6 +4,8 @@ import discord
 from discord import Embed, ApplicationContext
 from discord.ext import commands
 
+from cfg import CONFIG
+
 from utils.cravatar import Cravatar
 from utils.server_status import ServerStatus
 from utils.ban_list import BanList
@@ -97,5 +99,5 @@ class Commands(commands.Cog):
         if button:
             await ctx.respond(view=RequestView())
         else:
-            await ctx.send_modal(RequestModal())
+            await ctx.send_modal(RequestModal("Заявка", **CONFIG["request"]["modal"]))
 
